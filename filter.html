@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Car Rental Filter</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+   /* Reset and body styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'poppins', sans-serif;
+  background-color: #fff;
+}
+
+    /* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: white;
+  position: relative;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  position: relative;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropbtn {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  height: 80px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+.dropdown-content a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  white-space: nowrap;
+}
+.dropdown-content a:hover {
+  background-color: #67616132;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}    
+.dropdown-item {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 80px;
+  width:250px;
+  color:black;
+  text-shadow: 1px 1px 4px white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.dropdown-item:hover {
+  transform: scale(1.03);
+}
+
+/* filter */
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 20px;
+}
+
+.filter-btn {
+  background-color: #e6e6ff;
+  padding: 8px 16px;
+  border-radius: 12px;
+  display: flex;
+  gap: 6px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.filter-btn i {
+  font-size: 16px;
+}
+
+  /* Responsive adjustments (optional) */
+@media (max-width: 768px) {
+.nav-links {
+  display: none;
+  }
+} 
+  /* breadcrumb */
+
+.breadcrumb {
+  padding: 20px 40px;
+  font-size: 1.2rem;
+}
+
+/* left details */
+.container {
+    display: flex;
+    padding: 30px;
+    gap: 220px;
+    
+}
+
+    /* Sidebar */
+/* Sidebar */
+    .sidebar {
+      width: 480px;
+      background: #eef0ff;
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .filter-group {
+      position: absolute;
+      background: #eef0ff;
+      padding: 10px;
+      margin-bottom: 16px;
+      border-radius: 8px;
+      position: relative;
+      border: 1px solid #ccc;
+    }
+
+    .filter-title {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .toggle-icon {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      cursor: pointer;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .filter-content {
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    label {
+      font-size: 13px;
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 8px;
+    }
+
+    .price-label {
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    .apply-btn {
+      background: #00bcd4;
+      border: none;
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      margin-top:60px;
+      
+    }
+    .one{position: relative; width: 480px;height:110px; margin-top:0px;z-index: 1;}
+    .two{position: absolute; width: 480px;height:110px; margin-top:-85px;z-index: 2;}
+    .three{position: absolute; width: 480px;height:110px; margin-top:-15px;z-index: 3;}
+    .four{position: absolute; width: 480px;height:110px; margin-top:55px;z-index: 4;}
+    .five{position: absolute; width: 480px;height:110px; margin-top:125px;z-index: 5;}
+    .six{position: absolute; width: 480px;height:110px; margin-top:195px;z-index: 6;}
+    .seven{position: absolute; width: 480px;height:110px; margin-top:295px;z-index: 7;}
+    .eight{position: absolute; width: 480px;height:190px; margin-top:395px;z-index:8;margin-bottom: 60px;}
+    .nine{ position: absolute; width:480px; height:110px;z-index: 7;margin-left:-10px;}
+    
+
+    /* Main content */
+    .content {
+     max-width: 600px;
+      flex: 1;
+      background: #f2f1ff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      max-height: 100vh;
+      overflow-y: auto;
+    }
+
+    .content-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .content-header h2 {
+      font-size: 1.9rem;
+      font-weight: 600;
+    }
+
+    .content-header a {
+      color: #111;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+
+     /* Scrollbar styling
+    .content::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .content::-webkit-scrollbar-thumb {
+      background: #00BCD4;
+      border-radius: 6px;
+    } */
+    /* card */
+    .rides-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: column;
+        gap: 30px;
+        border: 1px solid black;
+        border-radius: 20px;
+    }
+
+    .ride-card {
+        width: 560px;
+        background: #f2f1ff;
+        border-radius: 20px;
+        padding: 16px;
+        text-align: left;
+        border: 1px solid black;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: 0.3s ease;
+    }
+
+   
+
+    .ride-card img {
+        width: 100%;
+        border-radius: 12px;
+        margin-bottom: 15px;
+    }
+
+    .ride-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .ride-price {
+        font-size: 24px;
+        font-weight: 700;
+        color: #111;
+    }
+
+    .ride-price small {
+        font-weight: 400;
+        color: #999;
+    }
+
+    .ride-features {
+        background: #c1c1c2d6;
+        padding: 10px 12px;
+        margin: 15px 0;
+        border-radius: 12px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        color: #444;
+    }
+
+    .ride-features div {
+        text-align: center;
+    }
+
+    .ride-footer {
+        display: flex;
+        justify-content: space-between;
+    align-items: center;
+        }
+
+    .rating {
+        font-weight: bold;
+        font-size: 16px;
+        color: #333;
+    }
+
+    .rating::before {
+        content: "⭐";
+        margin-right: 5px;
+        color: #f7b500;
+    }
+
+    .rent-button {
+        background-color: #00bcd4;
+        color: #fff;
+        padding: 10px 16px;
+        font-size: 14px;
+        font-weight: 600;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .rent-button:hover {
+        background-color: #0097a7;
+    }
+
+    @media (max-width: 768px) {
+        .ride-card {
+            width: 90%;
+        }
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 300px;  
+      background-color: rgb(240, 240, 252);
+      padding: 40px 20px;
+      font-size: 14px;
+      color: #333;
+      border-top: 1px solid #ddd;
+    }
+
+    .footer-container {
+      max-width: 1500px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footer-column {
+      flex: 1 1 200px;
+      margin: 10px;
+    }
+
+    .footer-column h4 {
+      text-decoration: 2px underline;
+      
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-column ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .app-links img {
+      height: 40px;
+      margin-right: 10px;
+      margin-top: 8px;
+    }
+
+    .social-icons a {
+      text-decoration: none;
+      margin-right: 10px;
+      font-size: 18px;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 30px;
+      color: #888;
+    }
+
+  </style>
+</head>
+<body>
+ <!-- Navbar -->
+  <nav class="navbar">
+    <!-- Logo -->
+    <div class="logo"><img src="image/image.png" alt="logo"> </div>
+
+    <!-- Navigation Links -->
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      
+      <!-- Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown" >Cars</button>
+        <div class="dropdown-content" id="myDropdown">
+          <a href="pickup.html"><div class="dropdown-item" style="background-image: url('/image/image\ 37.png');  opacity: 0.5;">Pickup Cars</div></a>
+          <a href="vancar.html"><div class="dropdown-item" style="background-image: url('image/image\ 33.png'); opacity: 0.5;">Van Cars</div></a>
+          <a href="salooncar.html"><div class="dropdown-item" style="background-image: url('image/image\ 37.png');opacity: 0.5;">Saloon Cars</div></a>
+          <a href="offroad.html"><div class="dropdown-item" style="background-image: url('image/gla-facelift-exterior-right-front-three-quarter-3\ 1.png');opacity: 0.5;">Off Road Cars</div></a>
+          <a href="sportscar.html"><div class="dropdown-item" style="background-image: url('image/sports.webp');opacity: 0.5;">Sports Cars</div></a>
+        </div>
+      </div>
+
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Icons & Filter Button -->
+    <div class="icons">
+      <i class="fas fa-search"></i>
+      <a href="booking.html" style="color: black; text-decoration: none;"> <i class="fas fa-shopping-basket"></i></a>
+      <i class="fas fa-user"></i>
+      
+    </div>
+  </nav>
+<!-- Breadcrumb -->
+  <div class="breadcrumb">
+    Cars > Filter
+  </div>
+  <!-- left details -->
+<div class="container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    
+    <!-- Filter Block with Toggle -->
+    <div class="filter-group one">
+      <div class="filter-title">Rental Date:</div>
+      <div class="toggle-icon" onclick="toggleFilter(this)">–</div>
+      <div class="filter-content">
+        <!-- Placeholder if needed -->
+      </div>
+    </div>
+
+    <div class="filter-group two">
+      <div class="filter-title">Rental Type:</div>
+      <div class="toggle-icon" onclick="toggleFilter(this)">+</div>
+      <div class="filter-content">
+        <label><input type="radio" name="rental" checked> Per hour</label>
+        <label><input type="radio" name="rental"> One Day</label>
+        <label><input type="radio" name="rental"> Monthly</label>
+      </div>
+    </div>
+
+    <div class="filter-group three">
+      <div class="filter-title">Fuel Type:</div>
+      <div class="toggle-icon" onclick="toggleFilter(this)">+</div>
+      <div class="filter-content">
+        <label><input type="checkbox"> Petrol</label>
+        <label><input type="checkbox"> Diesel</label>
+        <label><input type="checkbox"> Electric</label>
+      </div>
+    </div>
+
+    <div class="filter-group four">
+      <div class="filter-title">Car Model & Year:</div>
+      <div class="toggle-icon" onclick="toggleFilter(this)">+</div>
+      <div class="filter-content">
+        <label><input type="checkbox"> 2023</label>
+        <label><input type="checkbox"> 2024</label>
+        <label><input type="checkbox"> 2025</label>
+      </div>
+    </div>
+
+    <div class="filter-group five">
+      <div class="filter-title">Transmission:</div>
+      <div class="toggle-icon" onclick="toggleFilter(this)">+</div>
+      <div class="filter-content">
+        <label><input type="radio" name="transmission"> Automatic</label>
+        <label><input type="radio" name="transmission"> Manual</label>
+        <label><input type="radio" name="transmission" checked> Any</label>
+      </div>
+    </div>
+
+    <div class="filter-group six">
+      <div class="filter-title">Body Style:</div>
+      <div class="toggle-icon" onclick="toggleFilter(this)">+</div>
+      <div class="filter-content">
+        <label><input type="checkbox"> Sedan</label>
+        <label><input type="checkbox"> Wagon</label>
+        <label><input type="checkbox"> Crossover</label>
+        <label><input type="checkbox"> Coupe</label>
+        <label><input type="checkbox"> Pickup</label>
+        <label><input type="checkbox"> Sport Coupe</label>
+      </div>
+    </div>
+
+    <div class="filter-group seven">
+    <a href ="pricing.html" style="text-decoration: none; color:#333;">
+      <div class="filter-title">Price Range:</div>
+      <div class="toggle-icon" onclick="toggleFilter(this)">+</div>
+      <div class="filter-content">
+        <input type="range" min="1000" max="10000" />
+        <div class="price-label">1k - 10k</div>
+      </div>
+      </a>
+    </div>
+
+    <div class="filter-group eight">
+      <div class="filter-title">Car Brand:</div>
+      <div class="toggle-icon" onclick="toggleFilter(this)">+</div>
+      <div class="filter-content">
+        <label><input type="checkbox"> Mahindra</label>
+        <label><input type="checkbox"> Toyota</label>
+        <label>&nbsp;&nbsp; &nbsp; <input type="checkbox"> Kia</label><br>
+        <label><input type="checkbox"> Hyundai</label>
+        <label>&nbsp;  <input type="checkbox">  Tata</label>
+        <label>&nbsp;&nbsp; &nbsp; &nbsp;  &nbsp;  <input type="checkbox"> Renault</label><br>
+        <label><input type="checkbox"> BMW</label>
+        <label>&nbsp;&nbsp; &nbsp; <input type="checkbox"> Audi</label>
+        <label>&nbsp;&nbsp; &nbsp; &nbsp;  &nbsp;  <input type="checkbox"> MB</label><br>
+        <label><input type="checkbox"> Jeep</label>
+        <label>&nbsp;&nbsp; &nbsp; <input type="checkbox"> Skoda</label>
+        <label>&nbsp;&nbsp; &nbsp; &nbsp;  <input type="checkbox"> MG</label>
+      </div>
+
+      <div class="filter-group nine">
+        <button class="apply-btn">Apply</button>
+      </div>  
+    </div>
+
+   
+  </aside>
+  <!-- Car Listings -->
+  <section class="content">
+    <div class="content-header">
+      <h2>Related Details:</h2>
+      <a href="#">View All</a>
+    </div>
+
+    <div class="rides-grid">
+      <!-- Card 1 -->
+      <div class="ride-card">
+        <img src="image/image 27.png" alt="Toyota Fortuner">
+        <div class="ride-title">Toyota Fortuner 2023</div>
+        <div class="ride-price">1,800<small>/day</small></div>
+        <div class="ride-features">
+          <div><img src="image/download-speed.png" style="Width:30px;" > 4,000<br>km</div>
+          <div><img src="image/transmission.png" style="Width:30px;" >Manual</div>
+          <div><img src="image/user.png" style="Width:30px;" >7 Person</div>
+          <div><img src="image/gas-station.png" style="Width:30px;" >Electric</div>
+        </div>
+        <div class="ride-footer">
+          <div class="rating">4.7</div>
+          <button class="rent-button">Rent Now</button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="ride-card">
+        <img src="image/image 28.png" alt="Nissan Maxima">
+        <div class="ride-title">Nissan Maxima Platinum 2024</div>
+        <div class="ride-price">2,300<small>/day</small></div>
+        <div class="ride-features">
+          <div><img src="image/download-speed.png" style="Width:30px;" >6,000<br>km</div>
+          <div><img src="image/transmission.png" style="Width:30px;" >Auto</div>
+          <div><img src="image/user.png" style="Width:30px;" >4 Person</div>
+          <div><img src="image/gas-station.png" style="Width:30px;" >Electric</div>
+        </div>
+        <div class="ride-footer">
+          <div class="rating">4.9</div>
+          <button class="rent-button">Rent Now</button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="ride-card">
+        <img src="image/image 29.png" alt="Skoda Kodiaq">
+        <div class="ride-title">Skoda Kodiaq Platinum 2025</div>
+        <div class="ride-price">1,800<small>/day</small></div>
+        <div class="ride-features">
+          <div><img src="image/download-speed.png" style="Width:30px;" >5,000<br>km</div>
+          <div><img src="image/transmission.png" style="Width:30px;" >Auto</div>
+          <div><img src="image/user.png" style="Width:30px;" >4 Person</div>
+          <div><img src="image/gas-station.png" style="Width:30px;" >Electric</div>
+        </div>
+        <div class="ride-footer">
+          <div class="rating">5.0</div>
+          <button class="rent-button">Rent Now</button>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</div>
+<!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h4>KNOW</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">About Strado Luxe</a></li>
+          <li><a href="#">Bulk Order & Booking Events</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>TERMS & CONDITIONS</h4>
+        <ul>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Delivery & Return Policies</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>CONTACT US</h4>
+        <ul>
+          <li>For Sale: Stradoluxe@coin</li>
+          <li>Call: +91 1234567890</li>
+          <li>For Complaints: 1800 2421 2421</li>
+          <li>Chat Time: Mon to Sat 9AM–8PM</li>
+          <li>For Complaints: Stradoluxe@.com</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>DOWNLOAD APP</h4>
+        <div class="app-links">
+          <img src="image/Clipboard 2025-08-20 11-26-06.jpg" alt="App Store">
+          <img src="image/Clipboard 2025-08-20 11-25-51.jpg" alt="Google Play" style="height: 42px;">
+        </div>
+      </div>
+      <div class="footer-column"> 
+        <h4 >FOLLOW US</h4>
+        <div class="social-icons">
+          <a href="#"><img src="image/instagram.png" style="width: 30px;"></a>
+          <a href="#"><img src="image/facebook.png"style="width: 30px;"></a>
+          <a href="#"><img src="image/twitter.png"style="width: 30px;"></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright" style="text-decoration:overline;">
+      
+      Copyright © 2025 All Rights Reserved.
+    </div>
+  </footer>
+
+<script>
+  // toggle
+
+  document.addEventListener("click", function(event) {
+  var dropdown = document.getElementById("myDropdown");
+  var button = document.querySelector(".dropbtn");
+
+  if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+    dropdown.style.display = "none";
+  }
+});
+</script>
+</body>
+</html>

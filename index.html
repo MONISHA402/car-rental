@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Navbar with Dropdown</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <!-- Logo -->
+    <div class="logo"><img src="image/image.png" alt="logo"> </div>
+
+    <!-- Navigation Links -->
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      
+      <!-- Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown" >Cars</button>
+        <div class="dropdown-content" id="myDropdown">
+          <a href="pickup.html"><div class="dropdown-item" style="background-image: url('/image/image\ 37.png');  opacity: 0.5;">Pickup Cars</div></a>
+          <a href="vancar.html"><div class="dropdown-item" style="background-image: url('image/image\ 33.png'); opacity: 0.5;">Van Cars</div></a>
+          <a href="salooncar.html"><div class="dropdown-item" style="background-image: url('image/image\ 37.png');opacity: 0.5;">Saloon Cars</div></a>
+          <a href="offroad.html"><div class="dropdown-item" style="background-image: url('image/gla-facelift-exterior-right-front-three-quarter-3\ 1.png');opacity: 0.5;">Off Road Cars</div></a>
+          <a href="sportscar.html"><div class="dropdown-item" style="background-image: url('image/sports.webp');opacity: 0.5;">Sports Cars</div></a>
+        </div>
+      </div>
+
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Icons & Filter Button -->
+    <div class="icons">
+      <i class="fas fa-search"></i>
+      <a href="booking.html" style="color: black; text-decoration: none;"> <i class="fas fa-shopping-basket"></i></a>
+      <i class="fas fa-user"></i>
+      
+    </div>
+  </nav>
+<div class="slider-container">
+  <button class="nav-btn prev">Previous</button>
+
+  <div class="slider" id="slider">
+  <!-- Mahindra -->
+  <div class="slide mahindra">
+    <div class="brand">MAHINDRA</div>
+    <img src="image/image 7 1.png" alt="Mahindra" class="car-img">
+    <div class="info-boxes">
+      <div class="info" ><img src="image/transmission.png " style="width:30px;text-align: center; filter: brightness(0)invert(1);">  <strong>Transmission</strong><br>Gear Box <strong>Manual</strong><p>Manual Transmission gives you full control over gear shifts,ideal for performance driving.</p></div>
+      <div class="info"><img src="image/gas-station.png" style="width:30px;text-align: center; filter: brightness(0)invert(1);" > <strong>Energy Mode</strong>Power<br><strong>Petrol</strong><p>Petrol engines deliver smooth,quiet performance with quick acceleration</p></div>
+      <div class="info"><img src="image/user.png" style="width:30px;text-align: center; filter: brightness(0)invert(1);" > <strong>Seating Capacity</strong>Comfort<br><strong>5 Adults</strong><p>Comfortably seats up to 5 passengers,perfect for families or small groups</p></div>
+    </div>
+  </div>
+
+  <!-- TATA -->
+  <div class="slide tata">
+    <div class="brand">TATA</div>
+    <img src="image/image 6 2.png" alt="Tata" class="car-img">
+    <div class="info-boxes">
+      <div class="info"><img src="image/transmission.png " style="width:30px;text-align: center; filter: brightness(0)invert(1);">  <strong>Transmission</strong><br>Gear Box <strong>Manual</strong><p>Manual Transmission gives you full control over gear shifts,ideal for performance driving.</p></div>
+      <div class="info"><img src="image/gas-station.png" style="width:30px;text-align: center; filter: brightness(0)invert(1);" > <strong>Energy Mode</strong>Power<br><strong>Petrol</strong><p>Petrol engines deliver smooth,quiet performance with quick acceleration</p></div>
+      <div class="info"><img src="image/user.png" style="width:30px;text-align: center; filter: brightness(0)invert(1);" > <strong>Seating Capacity</strong>Comfort<br><strong>5 Adults</strong><p>Comfortably seats up to 5 passengers,perfect for families or small groups</p></div>
+    </div>
+  </div>
+
+  <!-- MG -->
+  <div class="slide mg">
+    <div class="brand">MG</div>
+    <img src="image/b6vno0b_1636739 1 1.png" alt="MG" class="car-img">
+    <div class="info-boxes">
+     <div class="info"><img src="image/transmission.png " style="width:30px;filter: brightness(0)invert(1);">  <strong>Transmission</strong><br>Gear Box <strong>Manual</strong><p>Manual Transmission gives you full control over gear shifts,ideal for performance driving.</p></div>
+      <div class="info"><img src="image/gas-station.png" style="width:30px;filter: brightness(0)invert(1);" > <strong>Energy Mode</strong>Power<br><strong>Petrol</strong><p>Petrol engines deliver smooth,quiet performance with quick acceleration</p></div>
+      <div class="info"><img src="image/user.png" style="width:30px;filter: brightness(0)invert(1);" > <strong>Seating Capacity</strong>Comfort<br><strong>5 Adults</strong><p>Comfortably seats up to 5 passengers,perfect for families or small groups</p></div>
+    </div>
+  </div>
+
+    <!-- SKODA -->
+  <div class="slide skoda">
+    <div class="brand">SKODA</div>
+    <img src="image/image 3 1.png" alt="Tata" class="car-img">
+    <div class="info-boxes">
+      <div class="info"><img src="image/transmission.png " style="width:30px;filter: brightness(0)invert(1);">  <strong>Transmission</strong><br>Gear Box <strong>Manual</strong><p>Manual Transmission gives you full control over gear shifts,ideal for performance driving.</p></div>
+      <div class="info"><img src="image/gas-station.png" style="width:30px;filter: brightness(0)invert(1);" > <strong>Energy Mode</strong>Power<br><strong>Petrol</strong><p>Petrol engines deliver smooth,quiet performance with quick acceleration</p></div>
+      <div class="info"><img src="image/user.png" style="width:30px;filter: brightness(0)invert(1);" > <strong>Seating Capacity</strong>Comfort<br><strong>5 Adults</strong><p>Comfortably seats up to 5 passengers,perfect for families or small groups</p></div>
+    </div>
+  </div>
+
+  <!-- MARUTHI -->
+  <div class="slide MARUTHI">
+    <div class="brand">MARUTHI</div>
+    <img src="image/image 7 1.png" alt="MG" class="car-img">
+    <div class="info-boxes">
+     <div class="info"><img src="image/transmission.png " style="width:30px; filter: brightness(0)invert(1);">  <strong>Transmission</strong><br>Gear Box <strong>Manual</strong><p>Manual Transmission gives you full control over gear shifts,ideal for performance driving.</p></div>
+      <div class="info"><img src="image/gas-station.png" style="width:30px;filter: brightness(0)invert(1);" > <strong>Energy Mode</strong>Power<br><strong>Petrol</strong><p>Petrol engines deliver smooth,quiet performance with quick acceleration</p></div>
+      <div class="info"><img src="image/user.png" style="width:30px;filter: brightness(0)invert(1);" > <strong>Seating Capacity</strong>Comfort<br><strong>5 Adults</strong><p>Comfortably seats up to 5 passengers,perfect for families or small groups</p></div>
+    </div>
+  </div>
+</div>
+
+
+  <button class="nav-btn next">Next</button>
+</div>
+ 
+
+<!-- car search filter -->
+ <div class="search-container">
+  <div class="input-group">
+    <label>Departure</label>
+    <select>
+      <option>Coimbatore, Tirupur</option>
+      
+    </select>
+  </div>
+
+  <div class="input-group">
+    <label>Return Location</label>
+    <select>
+      <option>Coimbatore, Tirupur</option>
+     
+    </select>
+  </div>
+
+  <div class="input-group">
+    <label>Pickup Date Time</label>
+    <input type="datetime-local" value="2025-05-01T12:00" />
+  </div>
+
+  <div class="input-group">
+    <label>Return Date Time</label>
+    <input type="datetime-local" value="2025-05-05T23:00" />
+  </div>
+<button class="search-btn">Search</button>
+</div>
+
+
+
+<!-- Explore trusted car -->
+<div class="section">
+    <h2>Explore Trusted Car Brands</h2>
+    <p>Rides you know, Brands you trust.</p>
+
+    <div class="brand-grid">
+      <!-- Card 1 -->
+      <div class="brand-card">
+        <a href="salooncar.html" style="text-decoration: none;color:#000; ">
+        <img src="image/image 37.png" class="car" alt="Audi">
+        <div class="logo">
+          <img src="image/audi.webp" alt="Audi Logo">
+        </div>
+        </a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="brand-card">
+        <a href="pickup.html" style="text-decoration: none;color:#000; ">
+        <img src="image/compass-exterior-right-front-three-quarter-78 1.png" class="car" alt="Jeep">
+        <div class="logo">
+          <img src="image/jeep.webp" alt="Jeep Logo">
+        </div>
+        </a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="brand-card">
+        <a href="offroad.html" style="text-decoration: none;color:#000; ">
+        <img src="image/image 30.png" class="car" alt="Mercedes">
+        <div class="logo">
+          <img src="image/benz.webp" alt="Mercedes Logo">
+        </div>
+        </a>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="brand-card">
+        <a href="vancar.html" style="text-decoration: none;color:#000; ">
+        <img src="image/image 28.png" class="car" alt="Nissan">
+        <div class="logo">
+          <img src="image/purepng.com-hyundai-logohyundaihyundai-carshyundai-manufacturerhyundai-automobileslogo-1701527487368owwnp.png" alt="Nissan Logo">
+        </div>
+        </a>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="brand-card">
+        <a href="sportscar.html" style="text-decoration: none;color:#000; ">
+        <img src="image/compass-exterior-right-front-three-quarter-78 1.png" class="car" alt="Land Rover">
+        <div class="logo">
+          <img src="image/land-rover-opt.webp" alt="Land Rover Logo" style="width:100%;height: 180px;">
+        </div>
+        </a>
+      </div>
+    </div>
+  </div>
+<!-- Drive the way -->
+  <div class="section">
+    <h2>Drive the Way You Want</h2>
+    <p>Your ride, your style.</p>
+
+    <div class="car-type-grid">
+      <!-- Card 1 -->
+     
+      <a href="saloon.html" class="car-type-card">
+        <img src="image/image 32.png" alt="Saloon" />
+        <span>Saloon</span>
+      </a>
+     
+      <!-- Card 2 -->
+      <a href="suv.html" class="car-type-card">
+        <img src="image/image 31.png" alt="SUV" />
+        <span>Suv</span>
+      </a>
+
+      <!-- Card 3 -->
+      <a href="van.html" class="car-type-card">
+        <img src="image/image 35.png" alt="Van" />
+        <span>Van</span>
+      </a>
+
+      <!-- Card 4 -->
+      <a href="pickup.html" class="car-type-card">
+        <img src="image/41da191d6fbfe3fbd0b5d55d57600112 1.png" alt="Pickup" />
+        <span>Pickup</span>
+      </a>
+
+
+      <!-- Card 5 -->
+      <a href="saloon.html" class="car-type-card">
+        <img src="image/sports.webp" alt="Saloon" />
+        <span>Sports</span>
+      </a>
+
+      <!-- Card 6 -->
+      <a href="suv.html" class="car-type-card">
+        <img src="image/image 36.png" alt="SUV" />
+        <span>Off Road</span>
+      </a>
+
+      <!-- Card 7 -->
+      <a href="van.html" class="car-type-card">
+        <img src="image/image 39.png" alt="Van" />
+        <span>Hatchback</span>
+      </a>
+
+      <!-- Card 8 -->
+      <a href="pickup.html" class="car-type-card">
+        <img src="image/image 37.png" alt="Pickup" />
+        <span>Roster</span>
+      </a>
+    </div>
+  </div>
+
+
+  <!-- Most popular ride -->
+   <div class="section">
+    <h2>Most Popular Rides</h2>
+    <p>Top cars, top experiences.</p>
+
+    <div class="rides-grid">
+      <!-- Card 1 -->
+      <div class="ride-card">
+        <a href="salooncar.html" style="text-decoration: none;color:#000; ">
+        <img src="image/image 27.png" alt="Toyota Fortuner">
+        <div class="ride-title">Toyota Fortuner 2023</div>
+        <div class="ride-price">1,800<small>/day</small></div>
+        <div class="ride-features">
+          <div><img src="image/download-speed.png" style="Width:30px;" > 4,000<br>km</div>
+          <div><img src="image/transmission.png" style="Width:30px;" >Manual</div>
+          <div><img src="image/user.png" style="Width:30px;" >7 Person</div>
+          <div><img src="image/gas-station.png" style="Width:30px;" >Electric</div>
+        </div>
+        <div class="ride-footer">
+          <div class="rating">4.7</div>
+          <button class="rent-button">Rent Now</button>
+        </div>
+        </a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="ride-card">
+        <a href="offroad.html" style="text-decoration: none; color:#000;">
+        <img src="image/image 28.png" alt="Nissan Maxima">
+        <div class="ride-title">Nissan Maxima Platinum 2024</div>
+        <div class="ride-price">2,300<small>/day</small></div>
+        <div class="ride-features">
+          <div><img src="image/download-speed.png" style="Width:30px;" >6,000<br>km</div>
+          <div><img src="image/transmission.png" style="Width:30px;" >Auto</div>
+          <div><img src="image/user.png" style="Width:30px;" >4 Person</div>
+          <div><img src="image/gas-station.png" style="Width:30px;" >Electric</div>
+        </div>
+        <div class="ride-footer">
+          <div class="rating">4.9</div>
+          <button class="rent-button">Rent Now</button>
+        </div>
+        </a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="ride-card">
+        <a href="sportscar.html" style="text-decoration: none;color:#000; ">
+        <img src="image/image 29.png" alt="Skoda Kodiaq">
+        <div class="ride-title">Skoda Kodiaq Platinum 2025</div>
+        <div class="ride-price">1,800<small>/day</small></div>
+        <div class="ride-features">
+          <div><img src="image/download-speed.png" style="Width:30px;" >5,000<br>km</div>
+          <div><img src="image/transmission.png" style="Width:30px;" >Auto</div>
+          <div><img src="image/user.png" style="Width:30px;" >4 Person</div>
+          <div><img src="image/gas-station.png" style="Width:30px;" >Electric</div>
+        </div>
+        <div class="ride-footer">
+          <div class="rating">5.0</div>
+          <button class="rent-button">Rent Now</button>
+        </div>
+      </div>
+    </div>
+    </a>
+  </div>
+
+
+<!-- popular car -->
+  <div class="container">
+    <h2>Popular Cars, Ready to Drive</h2>
+
+    <!-- Car 1 -->
+    <div class="car">
+      <div class="car-text">
+        <h3>Audi Q7</h3>
+        <h4>Command Attention,Drive Prestige.</h4>
+        <p>The Audi Q7 is Where power meets elegance.With bold design, advanced technology,and the confidence of quattro all-wheel drive, it offers a driving experience that's both luxurious and thrilling. Spacious,sophisticted,and unmistakably Audi-this is the SUN that redefines what it means to arrive.luxurious design, and advanced technology. </p>
+        <a href="pricing.html" class="btn">Explore</a>
+      </div>
+      <div class="image-group2">
+        <div class="image-left">
+          <img src="image/Frame 427319046.png" alt="Image 1">
+        </div>
+        <div class="image-right">
+          <img src="image/Frame 427319072.png" alt="Image 2">
+          <img src="image/Frame 427319048.png" alt="Image 3">
+        </div>
+      </div>
+    </div>
+
+    <!-- Car 2 -->
+    <div class="car">
+      <div class="image-group2">
+        <div class="image-left">
+          <img src="image/Frame 427319065.png" alt="Image 1">
+        </div>
+        <div class="image-right">
+          <img src="image/Frame 427319068.png" alt="Image 2">
+          <img src="image/Frame 427319067.png" alt="Image 3">
+        </div>
+      </div>
+      <div class="car-text">
+        <h3>BMW M2</h3>
+        <h4>Pure Power, Perfect Control.</h4>
+        <p>The new BMW M2 is a compact powerhouse built for purists.With a turbocharged inline-6 engine, rear-whell drive, and aggressive M stlying, it delivers raw performance and precise handling in every turn.From the track to the street, the M2 is engineered for those who carve the ultimate driving thrill-without compromise.</p>
+        <a href="vancar.html" class="btn">Explore</a>
+      </div>
+    </div>
+
+    <!-- Car 3 -->
+    <div class="car">
+      <div class="car-text">
+        <h3>MINI Cooper</h3>
+        <h4>Iconice Style, Electrifying Spirit.</h4>
+        <p>The 2025 MINI Cooper blends classiv charm with cutting-edge innovation. With itss unmistakable design, agile handling, and advanced digital cockpit, its's more than a car-it's an attitude.Whether you're zipping through city streets or hitting the open road, the MINI delivers big fun in a compact package.</p>
+        <a href="offroad.html" class="btn">Explore</a>
+      </div>
+      <div class="image-group2">
+        <div class="image-left">
+          <img src="image/Frame 427319073.png" alt="Image 1">
+        </div>
+        <div class="image-right">
+          <img src="image/Frame 427319071.png" alt="Image 2">
+          <img src="image/Frame 427319070.png" alt="Image 3">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <!-- logos -->
+    <div class="brand-strip">
+        <img src="image/audi.webp" alt="Audi" />
+        <img src="image/jeep.webp" alt="Jeep" />
+        <img src="image/opel-6-logo-black-and-white.png" alt="Nissan" />
+        <img src="image/Automobile Dacia S.A. 2021 Logo - Download Free PNG.png" alt="Mercedes-Benz" />
+         <img src="image/pngimg.com - renault_PNG37.png" alt="Land Rover" />
+        <img src="image/benz.webp" alt="Land Rover" />
+        <img src="image/purepng.com-hyundai-logohyundaihyundai-carshyundai-manufacturerhyundai-automobileslogo-1701527487368owwnp.png" alt="Hyundai" />
+        <img src="image/land-rover-opt.webp" alt="Toyota" />
+   </div>
+
+
+  <!--customer says  -->
+  <h2 style="text-align: center; font-size: 2.2rem;margin-top: 30px;">What Our Customers Say</h2>
+  <h3 style="text-align: center; font-size: 1.5rem;">Trusted by Drivers Everywhere</h3>
+  <div class="testimonials">
+    
+  <div class="card" onclick="toggleCard(this)">
+    <img src="image/QmRFbuTGphJzYWtFnorWVPfvBSqyCemHdMGgEKryoP5bc4.avif" alt="User 1">
+    <div class="content">
+      <p>I rented a BMW for a weekend road trip, and the whole process was seamless. The car was in perfect condition, and I'll definitely rent again.</p>
+      <h4>Ravena</h4>
+    </div>
+  </div>
+  <div class="card" onclick="toggleCard(this)">
+    <img src="image/1f316a116e0f15f33d3cf4664f1faaf8.jpg" alt="User 2">
+    <div class="content">
+      <p>The MINI Cooper I rented was the prefect city car-fun to drive and easy to park. Great experience from start to finish!</p>
+      <h4>Agalya</h4>
+    </div>
+  </div>
+  <div class="card" onclick="toggleCard(this)">
+    <img src="image/punjabi.jfif" alt="User 2">
+    <div class="content">
+      <p>Adorable wholesale toy shop with high quality independently made bike and toys. Very frinedly staff as well. A must stop with lttle ones when in Bath.</p>
+      <h4>Muthu Ravi</h4>
+    </div>
+  </div>
+</div>
+<!-- animate design -->
+ <div class="diamond-loader">
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <div class="diamond"></div>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+
+<!-- FAQ -->
+<div class="faq-container">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <div class="question" onclick="toggleFaq(this)">
+      What do I need to rent a car?
+    </div>
+    <div class="answer">
+     You need a valid driver's license, a government-issued ID, and a credit/debit card for payment.The minimum age is usually 21, depending upon the car type.International renters may need extra documentation.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question" onclick="toggleFaq(this)">
+      Can I rent a specific car model?
+    </div>
+    <div class="answer">
+      Yes, you can choose a specific brand or model when booking, based on availability. We offer a wide range of options, including BMW, Audi, and MINI.Availability may vary,so booking early is recommended.
+    </div>
+  </div>
+  
+  <div class="faq-item">
+    <div class="question" onclick="toggleFaq(this)">
+      Is insurance included in the rental price?
+    </div>
+    <div class="answer">
+      Basic insurance is included in the rental. Additional coverage options are available for extra protections. Always check the details of your insurance coverage before confirming your booking.
+    </div>
+  </div>
+  
+  <div class="faq-item">
+    <div class="question" onclick="toggleFaq(this)">
+      Can I return the car at a different location?
+    </div>
+    <div class="answer">
+    Yes, We offer one-way rentals between select location. Additional fees may apply, and availability depends on the location chosen. Check availability when booking your rental.  
+    </div>
+  </div>
+  
+  <div class="faq-item">
+    <div class="question" onclick="toggleFaq(this)">
+      What happens if I need to cancel my reservation?
+    </div>
+    <div class="answer">
+      You can the for free upto 24 hours before pickup. Cancellations within 24 hours may incur afee. You can cancel directly through your account or by contacting custome support.
+    </div>
+  </div>
+
+  <!-- Add more FAQ items as needed -->
+</div>
+<!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <a href = "about.html" style="text-decoration: none; color: #000;">
+        <h4>KNOW</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">About Strado Luxe</a></li>
+          <li><a href="#">Bulk Order & Booking Events</a></li>
+        </ul>
+        </a>
+      </div>
+      <div class="footer-column">
+        <h4>TERMS & CONDITIONS</h4>
+        <ul>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Delivery & Return Policies</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <a href = "contact.html" style="text-decoration: none; color: #000;">
+        <h4>CONTACT US</h4>
+        <ul>
+          <li>For Sale: Stradoluxe@coin</li>
+          <li>Call: +91 1234567890</li>
+          <li>For Complaints: 1800 2421 2421</li>
+          <li>Chat Time: Mon to Sat 9AM–8PM</li>
+          <li>For Complaints: Stradoluxe@.com</li>
+        </ul>
+        </a>
+      </div>
+      <div class="footer-column">
+        <h4>DOWNLOAD APP</h4>
+        <div class="app-links">
+          <img src="image/Clipboard 2025-08-20 11-26-06.jpg" alt="App Store">
+          <img src="image/Clipboard 2025-08-20 11-25-51.jpg" alt="Google Play" style="height: 42px;">
+        </div>
+      </div>
+      <div class="footer-column"> 
+        <h4 >FOLLOW US</h4>
+        <div class="social-icons">
+          <a href="#"><img src="image/instagram.png" style="width: 30px;"></a>
+          <a href="#"><img src="image/facebook.png"style="width: 30px;"></a>
+          <a href="#"><img src="image/twitter.png"style="width: 30px;"></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright" style="text-decoration:overline;">
+      
+      Copyright © 2025 All Rights Reserved.
+    </div>
+  </footer>
+
+
+
+<script>
+  // toggle
+
+  document.addEventListener("click", function(event) {
+  var dropdown = document.getElementById("myDropdown");
+  var button = document.querySelector(".dropbtn");
+
+  if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+    dropdown.style.display = "none";
+  }
+});
+
+// img zoom nxt previous
+const slides = document.querySelectorAll(".slide");
+const slider = document.getElementById("slider");
+let currentIndex = 0;
+
+function showSlide(index) {
+  slider.style.transform = `translateX(-${index * 100}%)`;
+
+  slides.forEach(slide => slide.classList.remove("active"));
+  slides[index].classList.add("active");
+}
+
+document.querySelector(".next").addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  showSlide(currentIndex);
+});
+
+document.querySelector(".prev").addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  showSlide(currentIndex);
+});
+
+
+showSlide(currentIndex);// Show the first slide on load
+
+
+  
+
+
+
+//   cutomer say
+function toggleCard(card) {
+  card.classList.toggle('image-only');
+}
+
+// FAQ
+function toggleFaq(element) {
+  const item = element.parentElement;
+  item.classList.toggle('active');
+}
+
+</script>
+
+</body>
+</html>

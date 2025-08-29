@@ -1,0 +1,332 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'poppins', sans-serif;
+    background-color: white;
+}
+
+    /* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: white;
+    position: relative;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    position: relative;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropbtn {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  height: 80px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+.dropdown-content a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  white-space: nowrap;
+}
+.dropdown-content a:hover {
+  background-color: #67616132;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}    
+.dropdown-item {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 80px;
+  width:250px;
+  color:black;
+  text-shadow: 1px 1px 4px white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.dropdown-item:hover {
+  transform: scale(1.03);
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 20px;
+}
+
+.filter-btn {
+    background-color: #e6e6ff;
+    padding: 8px 16px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.filter-btn i {
+    font-size: 16px;
+}
+
+    /* Responsive adjustments (optional) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+} 
+/* filter */
+.breadcrumb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.filter-btn {
+    float: right;
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 30px;
+}
+
+/* card */
+.rides-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+.ride-card {
+    width: 360px;
+    background: #f2f1ff;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 16px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+}
+
+.ride-card:hover {
+    transform: translateY(-5px);
+}
+
+.ride-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.ride-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.ride-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111;
+}
+
+.ride-price small {
+    font-weight: 400;
+    color: #999;
+}
+
+.ride-features {
+    background: #fff;
+    padding: 10px 12px;
+    margin: 15px 0;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #444;
+}
+
+.ride-features div {
+    text-align: center;
+}
+
+.ride-footer {
+    display: flex;
+    justify-content: space-between;
+align-items: center;
+    }
+
+.rating {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.rating::before {
+    content: "⭐";
+    margin-right: 5px;
+    color: #f7b500;
+}
+
+.rent-button {
+    background-color: #00bcd4;
+    color: #fff;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.rent-button:hover {
+    background-color: #0097a7;
+}
+
+@media (max-width: 768px) {
+    .ride-card {
+        width: 90%;
+    }
+}
+
+    /* Pagination */
+.pagination {
+    text-align: center;
+    margin: 30px 0;}
+
+ .pagination button {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    margin: 0 4px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination .active {
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+}
+
+    /* Footer */
+footer {
+    background-color: #f2f1ff;
+    padding: 40px 20px;
+    font-size: 14px;
+    color: #333;
+    border-top: 1px solid #ddd;
+}
+
+    .footer-container {
+      max-width: 1500px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footer-column {
+      flex: 1 1 200px;
+      margin: 10px;
+    }
+
+    .footer-column h4 {
+      text-decoration: 2px underline;
+      
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-column ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .app-links img {
+      height: 40px;
+      margin-right: 10px;
+      margin-top: 8px;
+    }
+
+    .social-icons a {
+      text-decoration: none;
+      margin-right: 10px;
+      font-size: 18px;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 30px;
+      color: #888;
+    }
+

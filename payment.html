@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Booking - Payments</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+/* Reset and body styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'poppins', sans-serif;
+  background-color: #fff;
+}
+
+    /* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: white;
+  position: relative;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  position: relative;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropbtn {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  height: 80px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+.dropdown-content a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  white-space: nowrap;
+}
+.dropdown-content a:hover {
+  background-color: #67616132;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}    
+.dropdown-item {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 80px;
+  width:250px;
+  color:black;
+  text-shadow: 1px 1px 4px white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.dropdown-item:hover {
+  transform: scale(1.03);
+}
+
+/* filter */
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 20px;
+}
+
+.filter-btn {
+  background-color: #e6e6ff;
+  padding: 8px 16px;
+  border-radius: 12px;
+  display: flex;
+  gap: 6px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.filter-btn i {
+  font-size: 16px;
+}
+
+  /* Responsive adjustments (optional) */
+@media (max-width: 768px) {
+.nav-links {
+  display: none;
+  }
+}   
+/* filter */
+.breadcrumb {
+  display: inline-block;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.filter-btn {
+  float: right;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin: 30px;
+}
+/* main content */
+
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 0 40px 40px;
+  flex-wrap: wrap;
+}
+
+.left, .right {
+  background:#f2f4f8;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.left {
+  flex: 1 1 400px;
+}
+
+.right {
+  flex: 1 1 300px;
+}
+
+.section {
+  border-bottom: 1px solid #eee;
+  padding: 15px 0;
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.section h4 {
+  margin: 0 0 10px;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+    
+.change-btn {
+  background-color: #00bcd4;
+  color: black;
+  border: none;
+      
+  padding: 25px 42px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.payment-options {
+  display: flex;
+  gap: 30px;
+      
+  margin-bottom: 15px;
+}
+
+.payment-options img {
+  height: 65px;
+  cursor: pointer;
+}
+.form-card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 20px;
+  width: 600px;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+label {
+  margin-bottom: 6px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.secure-note {
+  font-size: 13px;
+  color: #444;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.book-btn {
+  width: 100%;
+  padding: 16px;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+    /* Right Section */
+.carousel{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  gap:20px;
+}
+.carousel img {
+  width: 80%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 40px;
+  flex-direction: row;
+}
+.carousel img:nth-child(1),
+.carousel img:nth-child(3){
+  width:10%;
+  border-radius: 110px;
+}
+   
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #444;
+  margin-top: 50px;
+}
+
+.spec-item {
+  background-color: #f9f9f9;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow:0 4px 8px 0 #ccc;
+}
+
+.summary {
+  margin-top: 35px;
+  border-radius: 20px;
+  width:600px;
+  border: 1px solid black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  padding:0;
+  position: relative;
+}
+.summary h2{
+  font-size: 1.8rem;
+  margin-bottom: 58px;
+  font-weight: bold;
+}
+.summary-item {
+  display: flex;
+  font-size: 1.2rem;
+  font-weight: bold;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.summary-total {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  border-top: 1px solid black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+ @media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+    /* Footer */
+    footer {
+      background-color: #f2f4f8;
+      padding: 40px 20px;
+      font-size: 14px;
+      color: #333;
+      border-top: 1px solid #ddd;
+    }
+
+    .footer-container {
+      max-width: 1500px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footer-column {
+      flex: 1 1 200px;
+      margin: 10px;
+    }
+
+    .footer-column h4 {
+      text-decoration: 2px underline;
+      
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-column ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .app-links img {
+      height: 40px;
+      margin-right: 10px;
+      margin-top: 8px;
+    }
+
+    .social-icons a {
+      text-decoration: none;
+      margin-right: 10px;
+      font-size: 18px;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 30px;
+      color: #888;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <!-- Logo -->
+    <div class="logo"><img src="image/image.png" alt="logo"> </div>
+
+    <!-- Navigation Links -->
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      
+      <!-- Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown" >Cars</button>
+        <div class="dropdown-content" id="myDropdown">
+          <a href="pickup.html"><div class="dropdown-item" style="background-image: url('/image/image\ 37.png');  opacity: 0.5;">Pickup Cars</div></a>
+          <a href="vancar.html"><div class="dropdown-item" style="background-image: url('image/image\ 33.png'); opacity: 0.5;">Van Cars</div></a>
+          <a href="salooncar.html"><div class="dropdown-item" style="background-image: url('image/image\ 37.png');opacity: 0.5;">Saloon Cars</div></a>
+          <a href="offroad.html"><div class="dropdown-item" style="background-image: url('image/gla-facelift-exterior-right-front-three-quarter-3\ 1.png');opacity: 0.5;">Off Road Cars</div></a>
+          <a href="sportscar.html"><div class="dropdown-item" style="background-image: url('image/sports.webp');opacity: 0.5;">Sports Cars</div></a>
+        </div>
+      </div>
+
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Icons & Filter Button -->
+    <div class="icons">
+      <i class="fas fa-search"></i>
+      <a href="booking.html" style="color: black; text-decoration: none;"> <i class="fas fa-shopping-basket"></i></a>
+      <i class="fas fa-user"></i>
+      
+    </div>
+  </nav>
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    Booking > Payments
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Left Panel -->
+    <div class="left">
+      <!-- Contact -->
+      <div class="section">
+        <h4>Contact Details</h4>
+        <div class="info-row">
+          <div style="font-size: 1.2rem;">R. Kavin Kalai &nbsp;&nbsp; 91 8885556666</div>
+          <button class="change-btn">Change</button>
+        </div>
+      </div>
+
+      <!-- Address -->
+      <div class="section">
+        <h4>Delivery Address</h4>
+        <div class="info-row">
+          <div style="font-size: 1.2rem;">44/1 Bharat Apartment 4C, 5th Main Road,<br> Jayanagar, Bangalore 560041</div>
+          <button class="change-btn">Change</button>
+        </div>
+      </div>
+
+      <!-- Payment -->
+      <div class="section">
+        <h4>Payment Method</h4>
+        <div class="payment-options">
+          <img src="image/visa.jpg" alt="Visa" />
+          <img src="image/Mastercard-Logo-Font.jpg" alt="mastercard" />
+          <img src="image/paypal.webp" alt="Paypal" />
+          <img src="image/Apple-Pay-Logo.jpg" alt="Apple Pay" />
+          <img src="image/gpay.webp" alt="Google Pay" />
+        </div>
+       <div class="form-card">
+  <label>Enter Card Number*</label>
+  <input type="text" placeholder="Number" />
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Validity Date</label>
+          <input type="text" placeholder="MM/YY" />
+        </div>
+
+        <div class="form-group">
+          <label>CVV*</label>
+          <input type="number" placeholder="CVV" />
+        </div>
+      </div>
+    </div>
+
+    <div class="secure-note">
+      Your card details would be securely saved for fast payment, CVV will not be stored<span style="color: red;">*</span>
+    </div>
+
+    <button class="book-btn">Confirm Your Booking</button>
+    </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="right">
+      <div class="carousel">
+        <img src="image/Frame 427319099.png" alt="Toyota Fortuner" />
+        <img src="image/Frame 427319107.png" alt="Toyota Fortuner" />
+        <img src="image/Frame 427319100.png" alt="Toyota Fortuner" />
+      </div>  
+
+      <div class="spec-grid">
+        <div class="spec-item"><img src="image/transmission.png" alt="gear" style="width: 50px;" /> <strong>Gear Box:</strong> Manual/Automatic</div>
+        <div class="spec-item"><img src="image/gasoline-pump.png" alt="Fuel"style="width: 50px;" /> <strong>Fuel:</strong> Petrol</div>
+        <div class="spec-item"><img src="image/car-door.png" alt="door"style="width: 50px;" /> <strong>Doors:</strong> 4</div>
+        <div class="spec-item"><img src="image/air-conditioner.png" alt="AC" style="width: 50px;"/> <strong>AC:</strong> Yes</div>
+        <div class="spec-item"><img src="image/baby-car-seat.png" alt="seat"style="width: 50px;" /> <strong>Seats:</strong> 7</div>
+        <div class="spec-item"><img src="image/distance.png" alt="map" style="width: 50px;"/> <strong>Distance:</strong> 5000</div>
+      </div>
+
+      <div class="summary">
+        <h2>Booking Summary</h2>
+        <div class="summary-item">
+          <span>Toyota Fortuner 2023</span>
+          <span>1,800</span>
+        </div>
+        <div class="summary-item">
+          <span>Tax & GST</span>
+          <span>400</span>
+        </div>
+        <div class="summary-item summary-total">
+          <span>Total</span>
+          <span>2,200</span>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <a href = "about.html" style="text-decoration: none; color: #000;">
+        <h4>KNOW</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">About Strado Luxe</a></li>
+          <li><a href="#">Bulk Order & Booking Events</a></li>
+        </ul>
+      </a>
+      </div>
+      <div class="footer-column">
+        <h4>TERMS & CONDITIONS</h4>
+        <ul>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Delivery & Return Policies</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <a href = "contact.html" style="text-decoration: none; color: #000;">
+        <h4>CONTACT US</h4>
+        <ul>
+          <li>For Sale: Stradoluxe@coin</li>
+          <li>Call: +91 1234567890</li>
+          <li>For Complaints: 1800 2421 2421</li>
+          <li>Chat Time: Mon to Sat 9AM–8PM</li>
+          <li>For Complaints: Stradoluxe@.com</li>
+        </ul>
+        </a>
+      </div>
+      <div class="footer-column">
+        <h4>DOWNLOAD APP</h4>
+        <div class="app-links">
+          <img src="image/Clipboard 2025-08-20 11-26-06.jpg" alt="App Store">
+          <img src="image/Clipboard 2025-08-20 11-25-51.jpg" alt="Google Play" style="height: 42px;">
+        </div>
+      </div>
+      <div class="footer-column"> 
+        <h4 >FOLLOW US</h4>
+        <div class="social-icons">
+          <a href="#"><img src="image/instagram.png" style="width: 30px;"></a>
+          <a href="#"><img src="image/facebook.png"style="width: 30px;"></a>
+          <a href="#"><img src="image/twitter.png"style="width: 30px;"></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright" style="text-decoration:overline;">
+      
+      Copyright © 2025 All Rights Reserved.
+    </div>
+  </footer>
+
+<script>
+  // toggle
+
+  document.addEventListener("click", function(event) {
+  var dropdown = document.getElementById("myDropdown");
+  var button = document.querySelector(".dropbtn");
+
+  if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+    dropdown.style.display = "none";
+  }
+});
+</script>
+</body>
+</html>
